@@ -49,4 +49,4 @@ function to_title_case( $title ) {
 
 		return mb_strtoupper( mb_substr( $matches[0], 0, 1, 'UTF-8' ), 'UTF-8' ) . mb_substr( $matches[0], 1, null, 'UTF-8' );
 	}, $title);
-};
+}
