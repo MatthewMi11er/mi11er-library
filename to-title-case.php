@@ -1,6 +1,7 @@
 <?php
 /**
  * PHP port of to-title-case ({@link https://github.com/gouch/to-title-case }) javascript function.
+ * See also:{@link http://camendesign.com/code/title-case}
  *
  * @copyright 2016 Matthew Miller
  * @license MIT
@@ -21,12 +22,20 @@
  * @return string
  */
 function to_title_case( $title ) {
+		/**
+		 * Remove HTML like tags and entities
+		 */
+		$elements = '/<(code|var)[^>]*>.*?<\/\1>|<[^>]+>|&\S+;/';
+		preg_match_all ($elements, $title, $found_elements, PREG_OFFSET_CAPTURE);
+		$title = preg_replace ($elements, '', $title);
+		
+
 	/**
 	 * These are words that generally should not be capitalized in the title.
 	 */
 	$smallWords = '/^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/iu';
 
-	return preg_replace_callback('/[A-Za-z0-9\xC0-\xFF]+[^\s-]*/u', function( $matches ) use ( $title, $smallWords ) {
+	$title_cased = preg_replace_callback('/[A-Za-z0-9\xC0-\xFF]+[^\s-]*/u', function( $matches ) use ( $title, $smallWords ) {
 		static $start_at = 0;
 
 		// Find where the match starts in our $title.
@@ -49,4 +58,12 @@ function to_title_case( $title ) {
 
 		return mb_strtoupper( mb_substr( $matches[0], 0, 1, 'UTF-8' ), 'UTF-8' ) . mb_substr( $matches[0], 1, null, 'UTF-8' );
 	}, $title);
+
+	/**
+	 * Try to put the HTML tags and entities back where they belong
+	 */
+	foreach ( $found_elements[0] as $element ){
+		$title_cased = substr_replace( $title_cased, $element[0], $element[1], 0);
+	}
+	return $title_cased;
 }

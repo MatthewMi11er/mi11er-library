@@ -158,6 +158,10 @@ $test_cases = [
 		'input' => 'take them on: special lower cases',
 		'expect' => 'Take Them On: Special Lower Cases',
 	],
+	[
+		'input' => '<h1>some <b>HTML</b> &amp; entities</h1>',
+		'expect' => '<h1>Some <b>HTML</b> &amp; Entities</h1>',
+	],
 ];
 
 $output = '';
@@ -170,13 +174,9 @@ foreach ( $test_cases as $test_case ) {
 	$status   = $is_valid ? 'Pass' : 'Fail';
 	$bg_color = ! $is_valid ? ' bgcolor="#FF0000"' : '';
 
-	$output  .= sprintf( $pattern, $input, $expect, $bg_color, $result, $bg_color, $status );
+	$output  .= sprintf( $pattern, htmlentities( $input ), htmlentities( $expect ), $bg_color, htmlentities( $result ), $bg_color, $status );
 }
 
 $output = sprintf( '<html><head><meta charset="UTF-8"><title>to-title-case</title></head><body><table style="font-size:12px"><tr><th>Test Case</th><th>Expected Output</th><th>Test Result</th><th>Test Status</th></tr>%s</table></body></html>', $output );
 
 file_put_contents( __DIR__ . DIRECTORY_SEPARATOR . 'test-results.html' , $output );
-
-
-
-
