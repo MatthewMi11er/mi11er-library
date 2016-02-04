@@ -1,6 +1,6 @@
 # A `to_title_case` function for PHP
 
-This is a php port of the toTitleCase function for Javascript, written by David Gouch.
+This is a php port of the [toTitleCase function for Javascript](https://github.com/gouch/to-title-case), written by David Gouch.
 
 Example Usage:
 ```
