@@ -28,7 +28,6 @@ function to_title_case( $title ) {
 		$elements = '/<(code|var)[^>]*>.*?<\/\1>|<[^>]+>|&\S+;/';
 		preg_match_all ($elements, $title, $found_elements, PREG_OFFSET_CAPTURE);
 		$title = preg_replace ($elements, '', $title);
-		
 
 	/**
 	 * These are words that generally should not be capitalized in the title.
