@@ -1,11 +1,7 @@
-# A `to_title_case` function for PHP
+# Mi11er Library
 
-This is a php port of the [toTitleCase function for Javascript](https://github.com/gouch/to-title-case), written by David Gouch.
+This library contains a variaty of useful classes to use in various projects.
 
-Example Usage:
-```
-<?php
-require_once to-title-case.php;
-$title = 'a title';
-echo to_title_case( $title ); // Output: A Title
-```
+Currently it has:
+1. A proper title case formatter. 
+2. A date time formatter that outputs AP style dates and times.
