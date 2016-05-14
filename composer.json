@@ -19,6 +19,6 @@
         "phpspec/phpspec": "~2.0",
         "squizlabs/php_codesniffer": "dev-master",
         "coduo/phpspec-data-provider-extension":"dev-master",
-        "henrikbjorn/phpspec-code-coverage": "dev-master",
+        "henrikbjorn/phpspec-code-coverage": "dev-master"
     }
 }
