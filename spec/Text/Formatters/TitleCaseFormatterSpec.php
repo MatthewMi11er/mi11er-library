@@ -20,9 +20,9 @@ class TitleCaseFormatterSpec extends ObjectBehavior
         $this->format($inputValue)->shouldReturn($expectedValue);
     }
 
-        /**
-         * Example test cases for the toTitleCcase method
-         */
+    /**
+     * Example test cases for the toTitleCcase method
+     */
     public function titleCaseExamples()
     {
         return  [

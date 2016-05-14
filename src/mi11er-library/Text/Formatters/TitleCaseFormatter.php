@@ -1,8 +1,8 @@
 <?php
 /**
- * PHP port of to-title-case ({@link https://github.com/gouch/to-title-case }) javascript function.
- * See also:{@link http://camendesign.com/code/title-case}
+ * The Mi11er Library
  *
+ * @package    Mi11er\Library
  * @copyright 2016 Matthew Miller
  * @license MIT
  *
@@ -29,6 +29,10 @@
 
 namespace Mi11er\Library\Text\Formatters;
 
+/**
+ * PHP port of to-title-case ({@link https://github.com/gouch/to-title-case }) javascript function.
+ * See also:{@link http://camendesign.com/code/title-case}
+ */
 class TitleCaseFormatter
 {
     /**
