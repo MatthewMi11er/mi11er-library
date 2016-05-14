@@ -1,0 +1,15 @@
+suites:
+  mi11er_suite:
+    namespace: Mi11er\Library
+    psr4_prefix: Mi11er\Library
+    src_path: src/mi11er-library
+extensions:
+  - PhpSpec\Extension\CodeCoverageExtension
+  - Coduo\PhpSpec\DataProvider\DataProviderExtension
+code_coverage:
+  whitelist:
+    - ./
+  format:
+    - html
+  output:
+    html: temp/coverage
