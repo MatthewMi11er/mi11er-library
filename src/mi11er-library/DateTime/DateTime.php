@@ -46,7 +46,7 @@ class DateTime extends PhpDateTime
      * Returns the formated Date and/or Time.
      *
      * @param string|DateTimeFormatterInterface $format The formatter we want to use, or a php date format string.
-     * @return Date_Time
+     * @return string
      */
     public function format($format)
     {
