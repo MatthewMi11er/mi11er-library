@@ -151,6 +151,7 @@ class TitleCaseFormatter
      * or not and returns the word with the correct
      * Capitalization.
      *
+     * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
      * @param array $matches The matches from preg_replace_callback.
      * @return string
      */
