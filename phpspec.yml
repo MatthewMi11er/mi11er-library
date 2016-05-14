@@ -14,4 +14,4 @@ code_coverage:
     - clover
   output:
     html: build/coverage
-    clover: build/coverage.xml
+    clover: build/logs/clover.xml
