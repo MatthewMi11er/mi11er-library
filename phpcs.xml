@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="mi11er">
+  <description>The coding standards for this library.</description>
+  
+  <file>./</file>
+  <exclude-pattern>vendor/*</exclude-pattern>
+  <exclude-pattern>temp/*</exclude-pattern>
+
+  <rule ref="PSR2" /> 
+  <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+    <exclude-pattern>spec/*</exclude-pattern>
+  </rule>
+</ruleset>

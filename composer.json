@@ -1,0 +1,17 @@
+{
+    "name": "mi11er/library",
+    "description": "This library contains a variaty of useful classes to use in various projects.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Miller",
+            "email": "matthew@mi11er.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mi11er\\Library\\": "src/mi11er-library/"
+        }
+    },
+    "require": {}
+}
