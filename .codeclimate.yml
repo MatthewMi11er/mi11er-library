@@ -11,9 +11,19 @@ engines:
     enabled: true
   phpmd:
     enabled: true
+  markdownlint:
+    enabled: true
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "PSR1,PSR2"
+  phan:
+    enabled: true
+    config:
+      file_extensions: "php"
 ratings:
   paths:
-  - "**.js"
   - "**.php"
+  - "**.md"
 exclude_paths:
 - spec/
