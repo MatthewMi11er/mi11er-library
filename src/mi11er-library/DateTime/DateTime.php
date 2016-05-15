@@ -30,7 +30,6 @@
 namespace Mi11er\Library\DateTime;
 
 use DateTime as PhpDateTime;
-use DateTimeInterface as PhpDateTimeInterface;
 use Mi11er\Library\DateTime\Formatters\DateTimeFormatterInterface;
 
 /**

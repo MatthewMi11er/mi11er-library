@@ -36,7 +36,6 @@ use DateTimeInterface as PhpDateTimeInterface;
  */
 interface DateTimeFormatterInterface
 {
-
     /**
      * Return the formatted Date/Time
      *
