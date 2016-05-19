@@ -41,6 +41,21 @@ use Mi11er\Library\DateTime\Formatters\DateTimeFormatterInterface;
  */
 class DateTime extends PhpDateTime
 {
+    private $formatter;
+
+    /**
+     * The constructor
+     *
+     * @param string $time A date/time string.
+     * @param DateTimeZone $timezone A DateTimeZone object representing the timezone of $time.
+     * @param array|DateTimeFormatterInterface $formatter A DateTimeFormatter object or objects.
+     */
+    public function __construct($time = "now", DateTimeZone $timezone = null, $formatter = [])
+    {
+        $this->formatter = (is_array($formatter))?$formatter:[$formatter];
+        parent::__construct($time, $timezone);
+    }
+
     /**
      * Returns the formated Date and/or Time.
      *
@@ -51,6 +66,12 @@ class DateTime extends PhpDateTime
     {
         if ($format instanceof DateTimeFormatterInterface) {
             return $format->format($this);
+        }
+        if (is_int($format)                             &&
+            array_key_exists($format, $this->formatter) &&
+            $this->formatter[$format] instanceof DateTimeFormatterInterface
+        ) {
+            return $this->formatter[$format]->format($this);
         }
         return parent::format($format);
     }

@@ -27,4 +27,22 @@ class DateTimeSpec extends ObjectBehavior
         $formatter->format($this)->willReturn('noon');
         $this->format($formatter)->shouldReturn('noon');
     }
+    
+    public function it_can_format_itself_with_a_custom_formatter2(DateTimeFormatterInterface $formatter)
+    {
+        $this->beConstructedWith('12:00', null, $formatter);
+        $formatter->format($this)->willReturn('noon');
+        $this->format(0)->shouldReturn('noon');
+    }
+    public function it_can_format_itself_with_a_custom_formatter3(
+        DateTimeFormatterInterface $formatter,
+        DateTimeFormatterInterface $formatter2
+    ) {
+        $this->beConstructedWith('12:00', null, [$formatter,$formatter2]);
+        $formatter->format($this)->willReturn('noon');
+        $this->format(0)->shouldReturn('noon');
+        $formatter2->format($this)->willReturn('midnight');
+        $this->format(1)->shouldReturn('midnight');
+        $this->format(2)->shouldReturn('2');
+    }
 }

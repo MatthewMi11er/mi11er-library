@@ -32,7 +32,7 @@ class ApStyleFormatterSpec extends ObjectBehavior
     }
 
     /**
-     * Example test cases for the toTitleCcase method
+     * Example test cases
      */
     public function dateTimeExamples()
     {
