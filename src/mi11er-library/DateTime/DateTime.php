@@ -30,6 +30,7 @@
 namespace Mi11er\Library\DateTime;
 
 use DateTime as PhpDateTime;
+use DateTimeZone as PhpDateTimeZone;
 use Mi11er\Library\DateTime\Formatters\DateTimeFormatterInterface;
 
 /**
@@ -47,10 +48,10 @@ class DateTime extends PhpDateTime
      * The constructor
      *
      * @param string $time A date/time string.
-     * @param DateTimeZone $timezone A DateTimeZone object representing the timezone of $time.
+     * @param PhpDateTimeZone $timezone A DateTimeZone object representing the timezone of $time.
      * @param array|DateTimeFormatterInterface $formatter A DateTimeFormatter object or objects.
      */
-    public function __construct($time = "now", DateTimeZone $timezone = null, $formatter = [])
+    public function __construct($time = "now", PhpDateTimeZone $timezone = null, $formatter = [])
     {
         $this->formatter = (is_array($formatter))?$formatter:[$formatter];
         parent::__construct($time, $timezone);
