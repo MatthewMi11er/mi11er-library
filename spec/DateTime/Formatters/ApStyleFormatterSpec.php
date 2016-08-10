@@ -19,12 +19,13 @@ class ApStyleFormatterSpec extends ObjectBehavior
     /**
      *  @dataProvider dateTimeExamples
      */
-    public function it_converts_text_to_title_case($inputValue, $expectedValue)
+    public function it_outputs_AP_styled_date_and_time($inputValue, $expectedValue)
     {
         $compareDateTime = new PhpDateTime('2008-10-07 18:11:31');
         $this->beConstructedWith($inputValue[0], $compareDateTime);
         $this->format($inputValue[1])->shouldReturn($expectedValue);
     }
+
     public function it_throws_and_exception_on_an_invalid_format()
     {
         $this->beConstructedWith('INVALID', new PhpDateTime());
