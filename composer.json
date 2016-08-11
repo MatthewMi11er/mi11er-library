@@ -13,13 +13,15 @@
             "Mi11er\\Library\\": "src/mi11er-library/"
         }
     },
-    "require": {},
+    "require": {
+      "paragonie/random_compat": "2.0.2"
+    },
     "require-dev": {
         "phpspec/phpspec": "~2.0",
-        "squizlabs/php_codesniffer": "dev-master",
-        "coduo/phpspec-data-provider-extension":"dev-master",
-        "henrikbjorn/phpspec-code-coverage": "dev-master",
-        "codeclimate/php-test-reporter": "dev-master",
-        "codacy/coverage": "dev-master"
+        "squizlabs/php_codesniffer":             "dev-master",
+        "coduo/phpspec-data-provider-extension": "dev-master",
+        "henrikbjorn/phpspec-code-coverage":     "~2.1.0",
+        "codeclimate/php-test-reporter":         "dev-master",
+        "codacy/coverage":                       "dev-master"
     }
 }
