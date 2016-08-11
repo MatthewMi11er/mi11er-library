@@ -793,13 +793,13 @@ class PasswordGenerator
     /**
      * The Constructor
      *
-     * @param string $length       How many symbols should the generated password have.
+     * @param int $length       How many symbols should the generated password have.
      * @param string $seperator    What should go between each symbol.
      * @param array  $symbolList   The list of Symobls to use.
      */
-    public function __construct($length = 7, $seperator = ' ', array $symbolList = null)
+    public function __construct($length = 7, $seperator = ' ', array $symbolList = [])
     {
-        if ($symbolList === null) {
+        if (empty($symbolList)) {
             $symbolList = $this->defaultSymbolList;
         }
         $this->setSymbolList($symbolList);
